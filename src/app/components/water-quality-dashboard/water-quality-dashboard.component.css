@@ -1,0 +1,58 @@
+.navbar {
+    background-color: #1F4E79;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+  }
+  
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+  }
+  
+  .nav-menu a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+  
+  .gauges-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .gauge-section {
+    text-align: center;
+    margin: 0 30px;
+  }
+  
+  .gauge {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .gauge-base {
+    fill: none;
+    stroke: #e0e0e0;
+    stroke-width: 20;
+  }
+  
+  .gauge-value {
+    fill: none;
+    stroke: #1F4E79;
+    stroke-width: 20;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.5s ease;
+  }
+  
+  .gauge-text {
+    font-size: 24px;
+    font-weight: bold;
+    text-anchor: middle;
+    dominant-baseline: middle;
+  }

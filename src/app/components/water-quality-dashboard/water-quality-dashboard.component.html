@@ -1,0 +1,61 @@
+<div class="dashboard-container">
+    <nav class="navbar">
+      <div class="nav-brand">
+        <span>MEDICIÓN DE PH</span>
+        <span>CALIDAD DEL AGUA</span>
+      </div>
+      <div class="nav-menu">
+        <a href="#">INICIO</a>
+        <a href="#">QUIÉNES SOMOS</a>
+        <a href="#">WPR BOT</a>
+        <a href="#">MEDICIÓN DE PH</a>
+        <a href="#">CONTACTO</a>
+      </div>
+    </nav>
+  
+    <div class="gauges-container">
+      <div class="gauge-section">
+        <h3>Nivel de pH</h3>
+        <svg class="gauge" viewBox="0 0 100 100">
+          <circle 
+            class="gauge-base" 
+            cx="50" 
+            cy="50" 
+            r="45"
+          ></circle>
+          <circle 
+            class="gauge-value" 
+            cx="50" 
+            cy="50" 
+            r="45"
+            [style.strokeDashoffset]="calculatePhGaugeOffset()"
+          ></circle>
+          <text x="50" y="50" class="gauge-text">
+            {{ waterQualityData?.phLevel | number:'1.1-1' }}
+          </text>
+        </svg>
+      </div>
+  
+      <div class="gauge-section">
+        <h3>Calidad del Agua</h3>
+        <svg class="gauge" viewBox="0 0 100 100">
+          <circle 
+            class="gauge-base" 
+            cx="50" 
+            cy="50" 
+            r="45"
+          ></circle>
+          <circle 
+            class="gauge-value" 
+            cx="50" 
+            cy="50" 
+            r="45"
+            [style.strokeDashoffset]="calculateWaterQualityGaugeOffset()"
+          ></circle>
+          <text x="50" y="50" class="gauge-text">
+            {{ waterQualityData?.waterQualityIndex | number:'1.0-0' }}%
+          </text>
+        </svg>
+      </div>
+    </div>
+  </div>
