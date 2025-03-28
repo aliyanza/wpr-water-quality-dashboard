@@ -4,9 +4,12 @@
     padding: 0;
   }
   
+  /* Fuentes alternativas más modernas y seguras */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  
   body {
-    font-family: 'Arial', sans-serif;
-    background-color: #00001a;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #050518;
     color: #ffffff;
     line-height: 1.6;
   }
@@ -14,117 +17,144 @@
   .dashboard-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 20px 15px;
   }
   
-  .navbar {
-    background-color: #0c0c22;
+  .title-container {
+    background-color: #070722;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .title-container h1 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
     color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    flex-wrap: wrap;
-  }
-  
-  .nav-brand {
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-    color: #ffffff;
-  }
-  
-  .nav-menu {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .nav-menu a {
-    color: #8a87a9;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-menu a:hover {
-    color: #ffffff;
+    text-transform: uppercase;
   }
   
   .gauges-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin-top: 50px;
     gap: 30px;
-    flex-wrap: wrap;
+    margin: 40px auto;
   }
   
   .gauge-section {
     text-align: center;
-    background-color: #13142a;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    width: 300px;
+    background-color: #0a0a2e;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 360px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .gauge-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   }
   
   .gauge-section h3 {
-    color: #8a87a9;
-    margin-bottom: 15px;
+    color: #9fa8ff;
+    margin-bottom: 25px;
     font-size: 18px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
   }
   
   .gauge {
-    width: 200px;
-    height: 200px;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
   }
   
-  .gauge-base {
+  .gauge-circle {
+    width: 100%;
+    height: 100%;
     fill: none;
-    stroke: #1a1a33;
+    stroke: #101038;
     stroke-width: 20;
+    stroke-linecap: round;
   }
   
-  .gauge-value {
+  .gauge-progress {
     fill: none;
-    stroke: #4646c6;
     stroke-width: 20;
+    stroke-linecap: round;
     transform: rotate(-90deg);
-    transform-origin: 50% 50%;
-    transition: stroke-dashoffset 0.5s ease;
+    transform-origin: center;
+    transition: stroke-dashoffset 1s ease;
+  }
+  
+  .ph-gauge-progress {
+    stroke: #2563eb;
+  }
+  
+  .quality-gauge-progress {
+    stroke: #3b82f6;
   }
   
   .gauge-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .gauge-value {
     font-size: 48px;
-    font-weight: bold;
-    text-anchor: middle;
-    dominant-baseline: middle;
-    fill: #ffffff;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+  }
+  
+  .gauge-unit {
+    font-size: 20px;
+    font-weight: 400;
+    color: #8a9aff;
+    margin-top: 5px;
   }
   
   @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .nav-menu {
-      margin-top: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .nav-menu a {
-      margin: 5px;
-    }
-  
     .gauge-section {
-      width: 100%;
-      max-width: 300px;
+      padding: 25px 15px;
     }
   
-    .gauge-text {
+    .gauge {
+      width: 220px;
+      height: 220px;
+    }
+  
+    .gauge-value {
+      font-size: 42px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gauge-section {
+      padding: 20px 10px;
+    }
+    
+    .gauge {
+      width: 180px;
+      height: 180px;
+    }
+    
+    .gauge-value {
       font-size: 36px;
+    }
+    
+    .gauge-unit {
+      font-size: 16px;
     }
   }
