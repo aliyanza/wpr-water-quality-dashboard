@@ -1,69 +1,69 @@
 <div class="dashboard-container">
-    <div class="title-container">
-      <h1>MEDICIÓN DE PH Y CALIDAD DEL AGUA</h1>
-    </div>
-  
-    <div class="gauges-container">
-      <div class="gauge-section">
-        <h3>NIVEL DE PH</h3>
-        <div class="gauge">
-          <svg viewBox="0 0 100 100">
-            <!-- Complete circle background -->
-            <circle 
-              class="gauge-circle" 
-              cx="50" 
-              cy="50" 
-              r="40"
-              stroke-dasharray="251.2"
-              stroke-dashoffset="0"
-            ></circle>
-            
-            <!-- Circle value -->
-            <circle 
-              class="gauge-progress ph-gauge-progress" 
-              cx="50" 
-              cy="50" 
-              r="40"
-              stroke-dasharray="251.2"
-              [style.stroke-dashoffset]="calculatePhGaugeOffset()"
-            ></circle>
-          </svg>
-          <div class="gauge-text">
-            <div class="gauge-value">{{ waterQualityData?.phLevel | number:'1.1-1' }}</div>
-            <div class="gauge-unit">pH</div>
-          </div>
+  <div class="title-container">
+    <h1>MEDICIÓN DE PH Y CALIDAD DEL AGUA</h1>
+  </div>
+
+  <div class="gauges-container">
+    <div class="gauge-section">
+      <h3>NIVEL DE PH</h3>
+      <div class="gauge">
+        <svg viewBox="0 0 100 100">
+          <!-- Círculo de fondo completo -->
+          <circle 
+            class="gauge-circle" 
+            cx="50" 
+            cy="50" 
+            r="40"
+            stroke-dasharray="251.2"
+            stroke-dashoffset="0"
+          ></circle>
+          
+          <!-- Valor del círculo -->
+          <circle 
+            class="gauge-progress ph-gauge-progress" 
+            cx="50" 
+            cy="50" 
+            r="40"
+            stroke-dasharray="251.2"
+            [style.stroke-dashoffset]="calculatePhGaugeOffset()"
+          ></circle>
+        </svg>
+        <div class="gauge-text">
+          <div class="gauge-value">{{ waterQualityData?.phLevel | number:'1.2-2' }}</div>
+          <div class="gauge-unit">pH</div>
         </div>
       </div>
-  
-      <div class="gauge-section">
-        <h3>CALIDAD DEL AGUA</h3>
-        <div class="gauge">
-          <svg viewBox="0 0 100 100">
-            <!-- Complete circle background -->
-            <circle 
-              class="gauge-circle" 
-              cx="50" 
-              cy="50" 
-              r="40"
-              stroke-dasharray="251.2"
-              stroke-dashoffset="0"
-            ></circle>
-            
-            <!-- Circle value -->
-            <circle 
-              class="gauge-progress quality-gauge-progress" 
-              cx="50" 
-              cy="50" 
-              r="40"
-              stroke-dasharray="251.2"
-              [style.stroke-dashoffset]="calculateWaterQualityGaugeOffset()"
-            ></circle>
-          </svg>
-          <div class="gauge-text">
-            <div class="gauge-value">{{ waterQualityData?.waterQualityIndex | number:'1.0-0' }}</div>
-            <div class="gauge-unit">ppm</div>
-          </div>
+    </div>
+
+    <div class="gauge-section">
+      <h3>CALIDAD DEL AGUA (TDS)</h3>
+      <div class="gauge">
+        <svg viewBox="0 0 100 100">
+          <!-- Círculo de fondo completo -->
+          <circle 
+            class="gauge-circle" 
+            cx="50" 
+            cy="50" 
+            r="40"
+            stroke-dasharray="251.2"
+            stroke-dashoffset="0"
+          ></circle>
+          
+          <!-- Valor del círculo -->
+          <circle 
+            class="gauge-progress quality-gauge-progress" 
+            cx="50" 
+            cy="50" 
+            r="40"
+            stroke-dasharray="251.2"
+            [style.stroke-dashoffset]="calculateWaterQualityGaugeOffset()"
+          ></circle>
+        </svg>
+        <div class="gauge-text">
+          <div class="gauge-value">{{ waterQualityData?.waterQualityIndex | number:'1.0-0' }}</div>
+          <div class="gauge-unit">ppm</div>
         </div>
       </div>
     </div>
   </div>
+</div>

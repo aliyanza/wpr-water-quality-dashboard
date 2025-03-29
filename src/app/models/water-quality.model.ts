@@ -3,3 +3,8 @@ export interface WaterQualityData {
   waterQualityIndex: number;
   timestamp: Date;
 }
+
+export interface FirebaseSensorsData {
+  pH: number;
+  TDS: number;
+}
