@@ -11,7 +11,7 @@
 /* Aplicando la nueva fuente a todo */
 body {
   font-family: 'Outfit', sans-serif;
-  background-color: #050518;
+  background-color: #000000;
   color: #ffffff;
   line-height: 1.6;
 }
@@ -23,7 +23,7 @@ body {
 }
 
 .title-container {
-  background-color: #070722;
+  background-color: #000000;
   padding: 25px;
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
@@ -50,7 +50,7 @@ body {
 
 .gauge-section {
   text-align: center;
-  background-color: #0a0a2e;
+  background-color: #000000;
   padding: 35px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -65,7 +65,7 @@ body {
 }
 
 .gauge-section h3 {
-  color: #9fa8ff;
+  color: #BB6D1F;
   margin-bottom: 25px;
   font-size: 18px;
   text-transform: uppercase;
@@ -85,7 +85,7 @@ body {
   width: 100%;
   height: 100%;
   fill: none;
-  stroke: #101038;
+  stroke: #000000;
   stroke-width: 20;
   stroke-linecap: round;
 }
@@ -100,11 +100,11 @@ body {
 }
 
 .ph-gauge-progress {
-  stroke: #2563eb;
+  stroke: #E67200;
 }
 
 .quality-gauge-progress {
-  stroke: #3b82f6;
+  stroke: #E67200;
 }
 
 .gauge-text {
@@ -126,7 +126,7 @@ body {
 .gauge-unit {
   font-size: 20px;
   font-weight: 400;
-  color: #8a9aff;
+  color: #BB6D1F;
   margin-top: 5px;
   font-family: 'Outfit', sans-serif;
 }
