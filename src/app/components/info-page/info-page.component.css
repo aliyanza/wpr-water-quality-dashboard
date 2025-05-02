@@ -1,0 +1,170 @@
+/* Importando Poppins - una fuente moderna y estética */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reseteo básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Aplicando la nueva fuente a todo */
+body {
+  font-family: 'Poppins', sans-serif;  /* Cambié la fuente a Poppins */
+  color: #ffffff;
+  line-height: 1.6;
+  background-color: #000000;
+}
+
+/* Contenedor principal para centrado y diseño ajustado */
+.container {
+  max-width: 750px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #1c1c1c;  /* Fondo oscuro solo en el contenedor */
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect en el contenedor */
+.container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de título principal con transiciones sutiles */
+h1 {
+  font-size: 2.2em;
+  color: #BB6D1F;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;  /* Cambié la fuente en los títulos */
+}
+
+/* Cambio de color cuando el título se pasa sobre él */
+h1:hover {
+  color: #E67200;
+}
+
+/* Estilo de subtítulos */
+h2 {
+  font-size: 1.5em;
+  color: #BB6D1F;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;  /* Cambié la fuente en los subtítulos */
+}
+
+/* Párrafos con un toque más limpio, margen cómodo */
+p {
+  font-size: 1.1em;
+  color: #e0e0e0;
+  margin-bottom: 15px;
+  line-height: 1.8;
+  transition: color 0.3s ease;
+  text-align: justify;  /* Justificando el texto */
+  font-family: 'Poppins', sans-serif;  /* Cambié la fuente en los párrafos */
+}
+
+/* Efecto al pasar el mouse sobre el párrafo */
+p:hover {
+  color: #BB6D1F;
+}
+
+/* Animación suave para los párrafos */
+p:nth-child(even) {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ajustes de responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+/* Animación de gradiente en el fondo */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Estilos para el botón "Regreso" con efecto 3D */
+.info-button {
+  background-color: #E67200;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin-top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;  /* Cambié la fuente también en el botón */
+  position: relative; /* Necesario para el efecto 3D */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Efecto 3D al pasar el mouse sobre el botón */
+.info-button:hover {
+  background-color: #BB6D1F;
+  transform: translateY(-10px) rotateX(10deg) rotateY(10deg); /* Añadiendo rotación para el efecto 3D */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de enfoque */
+.info-button:focus {
+  outline: none;
+}
+
+/* Estilo cuando el botón es presionado */
+.info-button:active {
+  transform: translateY(2px) rotateX(0) rotateY(0); /* El botón regresa a su posición original al hacer clic */
+  box-shadow: none;
+}

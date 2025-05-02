@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { WaterQualityService } from '../../services/water-quality.service';
 import { WaterQualityData } from '../../models/water-quality.model';
 import { Subscription } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-water-quality-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './water-quality-dashboard.component.html',
   styleUrls: ['./water-quality-dashboard.component.css']
 })

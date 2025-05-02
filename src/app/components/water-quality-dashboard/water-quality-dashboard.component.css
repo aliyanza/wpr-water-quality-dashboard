@@ -162,5 +162,48 @@ body {
   
   .gauge-unit {
     font-size: 16px;
+    
   }
+  
+  
+}
+/* Estilos para el botón "Pulsa para más información" con efecto 3D */
+.info-button {
+  background-color: #E67200;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin-top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;  /* Aplicamos la misma fuente */
+  position: relative; /* Necesario para el efecto 3D */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Efecto 3D al pasar el mouse sobre el botón */
+.info-button:hover {
+  background-color: #BB6D1F;
+  transform: translateY(-10px) rotateX(10deg) rotateY(10deg); /* Añadiendo rotación para el efecto 3D */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de enfoque */
+.info-button:focus {
+  outline: none;
+}
+
+/* Estilo cuando el botón es presionado */
+.info-button:active {
+  transform: translateY(2px) rotateX(0) rotateY(0); /* El botón regresa a su posición original al hacer clic */
+  box-shadow: none;
 }
