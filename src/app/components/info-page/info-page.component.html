@@ -1,28 +1,79 @@
 <div class="container">
-    <h1>WPR-Bot</h1>
+  <h1>WPR-Bot</h1>
+  <h2>Andres Castañeda-3D1, Paolo Montero-3D1, Alisson Yanza-3E2, David Benenaula-3E2</h2>
+  <p>
+    La presente tesis tiene como objetivo el diseño y desarrollo de un robot acuático impreso en 3D, capaz de monitorear la calidad del agua en cuerpos lacustres.
+  </p>
+  <p>
+    El prototipo cuenta con dos sensores principales: uno para la medición del pH y otro destinado a evaluar la calidad general del agua. Estos sensores permiten obtener información en tiempo real sobre el estado del agua, contribuyendo así al análisis ambiental y a la detección temprana de posibles contaminaciones.
+  </p>
+  <p>
+    El robot se desplaza mediante dos motores de corriente continua de 12 voltios, lo que le permite navegar de forma controlada en el entorno acuático. La estructura ha sido completamente fabricada mediante impresión 3D, lo cual reduce costos y facilita su replicabilidad.
+  </p>
+  <p>
+    Los datos recolectados por los sensores se visualizan a través de una aplicación desarrollada en <strong>Firebase Studio</strong>, lo que permite el monitoreo remoto y en tiempo real de los parámetros registrados.
+  </p>
+  <p>
+    Este proyecto combina tecnologías de bajo costo con sistemas de monitoreo ambiental, abriendo paso a nuevas herramientas accesibles para el estudio y conservación de ecosistemas acuáticos.
+  </p>
+  <p>
+    Para enteder como funciona el sensor del ph debemos de observar la siguiente imagen:
+  </p>
   
-    <h2>Andres Castañeda-3D1, Paolo Montero-3D1, Alisson Yanza-3E2, David Benenaula-3E2</h2>
-  
-    <p>
-      La presente tesis tiene como objetivo el diseño y desarrollo de un robot acuático impreso en 3D, capaz de monitorear la calidad del agua en cuerpos lacustres. 
-    </p>
-    <p>
-      El prototipo cuenta con dos sensores principales: uno para la medición del pH y otro destinado a evaluar la calidad general del agua. Estos sensores permiten obtener información en tiempo real sobre el estado del agua, contribuyendo así al análisis ambiental y a la detección temprana de posibles contaminaciones.
-    </p>
-    <p>
-      El robot se desplaza mediante dos motores de corriente continua de 12 voltios, lo que le permite navegar de forma controlada en el entorno acuático. La estructura ha sido completamente fabricada mediante impresión 3D, lo cual reduce costos y facilita su replicabilidad.
-    </p>
-    <p>
-      Los datos recolectados por los sensores se visualizan a través de una aplicación desarrollada en <strong>Firebase Studio</strong>, lo que permite el monitoreo remoto y en tiempo real de los parámetros registrados.
-    </p>
-    <p>
-      Este proyecto combina tecnologías de bajo costo con sistemas de monitoreo ambiental, abriendo paso a nuevas herramientas accesibles para el estudio y conservación de ecosistemas acuáticos.
-    </p>
-     <!-- 🔥 Aquí va el botón correctamente -->
+  <!-- Imagen añadida debajo del último párrafo -->
+  <div style="text-align: center; margin: 20px 0;">
+    <img src="https://www3.epa.gov/acidrain/education/site_students_spanish/images/phscale.gif" alt="Robot acuático para monitoreo de calidad de agua" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <p style="font-style: italic; margin-top: 8px; font-size: 14px; text-align: center;">Funcionamiento del PH</p>
+  </div>
+  <div style="margin: 30px 0;">
+    <h3 style="margin-bottom: 15px; color: white;">Reglas generales de PPM (para agua potable y otras aplicaciones):</h3>
+    <table style="width: 100%; border-collapse: collapse; background-color: #333; color: white;">
+      <thead>
+        <tr>
+          <th style="border: 1px solid #444; padding: 10px; text-align: left;">Calidad del agua</th>
+          <th style="border: 1px solid #444; padding: 10px; text-align: left;">Rango de TDS (ppm)</th>
+          <th style="border: 1px solid #444; padding: 10px; text-align: left;">Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="border: 1px solid #444; padding: 10px;">Agua ultra pura</td>
+          <td style="border: 1px solid #444; padding: 10px;">0 – 10</td>
+          <td style="border: 1px solid #444; padding: 10px;">Usada en laboratorios, no es potable.</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #444; padding: 10px;">Agua destilada</td>
+          <td style="border: 1px solid #444; padding: 10px;">1 – 50</td>
+          <td style="border: 1px solid #444; padding: 10px;">Muy pura, ideal para baterías o planchas.</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #444; padding: 10px;">Agua potable excelente</td>
+          <td style="border: 1px solid #444; padding: 10px;">50 – 150</td>
+          <td style="border: 1px solid #444; padding: 10px;">Muy buena para beber.</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #444; padding: 10px;">Agua potable aceptable</td>
+          <td style="border: 1px solid #444; padding: 10px;">150 – 300</td>
+          <td style="border: 1px solid #444; padding: 10px;">Aún segura para beber, pero puede tener algo de sabor.</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #444; padding: 10px;">Agua dura o con minerales</td>
+          <td style="border: 1px solid #444; padding: 10px;">300 – 500</td>
+          <td style="border: 1px solid #444; padding: 10px;">Permitida en algunos países, pero no ideal.</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #444; padding: 10px;">No recomendable beber</td>
+          <td style="border: 1px solid #444; padding: 10px;">500+</td>
+          <td style="border: 1px solid #444; padding: 10px;">Puede contener demasiadas sales, metales o contaminantes.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 🔥 Aquí va el botón correctamente -->
   <div style="text-align: center; margin-top: 20px;">
     <button routerLink="" class="info-button">
       regreso
     </button>
   </div>
-  </div>
-  
+</div>

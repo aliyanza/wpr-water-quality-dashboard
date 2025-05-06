@@ -9,7 +9,7 @@
       <div class="gauge">
         <svg viewBox="0 0 100 100">
           <circle class="gauge-circle" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="0"></circle>
-          <circle class="gauge-progress ph-gauge-progress" cx="50" cy="50" r="40" stroke-dasharray="251.2" [style.stroke-dashoffset]="calculatePhGaugeOffset()"></circle>
+          <circle class="gauge-progress ph-gauge-progress" [ngClass]="getPhColorClass(waterQualityData?.phLevel)" cx="50" cy="50" r="40" stroke-dasharray="251.2" [style.stroke-dashoffset]="calculatePhGaugeOffset()"></circle>
         </svg>
         <div class="gauge-text">
           <div class="gauge-value">{{ waterQualityData?.phLevel | number:'1.2-2' }}</div>
@@ -33,7 +33,6 @@
     </div>
   </div>
 
-  <!-- 🔥 Aquí va el botón correctamente -->
   <div style="text-align: center; margin-top: 20px;">
     <button routerLink="/info" class="info-button">
       Pulsa para más información

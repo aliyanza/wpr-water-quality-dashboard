@@ -27,22 +27,16 @@ export class WaterQualityDashboardComponent implements OnInit, OnDestroy {
         this.waterQualityData = data;
       }
     );
-    
-    // Verificar el estado de conexión
+
     this.checkConnectionStatus();
   }
 
   ngOnDestroy() {
-    if (this.dataSubscription) {
-      this.dataSubscription.unsubscribe();
-    }
-    if (this.connectionSubscription) {
-      this.connectionSubscription.unsubscribe();
-    }
+    this.dataSubscription?.unsubscribe();
+    this.connectionSubscription?.unsubscribe();
   }
-  
+
   private checkConnectionStatus(): void {
-    // Consultamos el nodo "test/connection" cada 10 segundos
     this.connectionSubscription = this.waterQualityService.getConnectionStatus().subscribe(
       status => {
         this.connectionStatus = status || 'Desconectado';
@@ -51,25 +45,32 @@ export class WaterQualityDashboardComponent implements OnInit, OnDestroy {
   }
 
   calculatePhGaugeOffset(): number {
-    const phValue = this.waterQualityData?.phLevel || 7;
-    const maxCircumference = 251.2; // 2πr donde r=40
-    
-    // Mapear escala pH (0-14) a progreso del medidor (0-100%)
-    const percentage = (phValue / 14);
-    
-    // Calcular el desplazamiento para un círculo completo con llenado adecuado
-    return maxCircumference * (1 - percentage);
+    const phValue = this.waterQualityData?.phLevel;
+    if (phValue === undefined || phValue === null) {
+      return 251.2;
+    }
+
+    const percentage = phValue / 14;
+    return 251.2 * (1 - percentage);
   }
 
   calculateWaterQualityGaugeOffset(): number {
-    const qualityIndex = this.waterQualityData?.waterQualityIndex || 0;
-    const maxCircumference = 251.2; // 2πr donde r=40
-    
-    // Calcular el desplazamiento para el porcentaje de calidad
-    // Para TDS, generalmente 0-1000 es el rango, pero podemos ajustarlo según tus necesidades
-    const maxTDS = 1000;
-    const percentage = Math.min(qualityIndex / maxTDS, 1);
-    
-    return maxCircumference * (1 - percentage);
+    const qualityIndex = this.waterQualityData?.waterQualityIndex;
+    if (qualityIndex === undefined || qualityIndex === null) {
+      return 251.2;
+    }
+
+    const percentage = Math.min(qualityIndex / 1000, 1);
+    return 251.2 * (1 - percentage);
+  }
+
+  getPhColorClass(phValue: number | undefined | null): string {
+    if (phValue === undefined || phValue === null) {
+      return 'ph-level-7';
+    }
+
+    const roundedPh = Math.round(phValue);
+    const boundedPh = Math.max(0, Math.min(14, roundedPh));
+    return `ph-level-${boundedPh}`;
   }
 }

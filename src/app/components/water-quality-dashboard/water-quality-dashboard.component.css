@@ -96,12 +96,25 @@ body {
   stroke-linecap: round;
   transform: rotate(-90deg);
   transform-origin: center;
-  transition: stroke-dashoffset 1s ease;
+  transition: stroke-dashoffset 1s ease, stroke 1s ease;
 }
 
-.ph-gauge-progress {
-  stroke: #E67200;
-}
+/* Colores para el pH según la escala de 0-14 */
+.ph-level-0 { stroke: #ff0000; } /* Rojo oscuro */
+.ph-level-1 { stroke: #ff0000; } /* Rojo */
+.ph-level-2 { stroke: #ff3300; } /* Rojo naranja */
+.ph-level-3 { stroke: #ff6600; } /* Naranja rojizo */
+.ph-level-4 { stroke: #ff9900; } /* Naranja */
+.ph-level-5 { stroke: #ffcc00; } /* Amarillo naranja */
+.ph-level-6 { stroke: #ffff00; } /* Amarillo */
+.ph-level-7 { stroke: #99cc00; } /* Verde amarillento - Neutro */
+.ph-level-8 { stroke: #33cc33; } /* Verde */
+.ph-level-9 { stroke: #00ccff; } /* Azul claro */
+.ph-level-10 { stroke: #0099ff; } /* Azul */
+.ph-level-11 { stroke: #0066ff; } /* Azul oscuro */
+.ph-level-12 { stroke: #3300ff; } /* Índigo */
+.ph-level-13 { stroke: #6600ff; } /* Violeta */
+.ph-level-14 { stroke: #9900ff; } /* Morado */
 
 .quality-gauge-progress {
   stroke: #E67200;
